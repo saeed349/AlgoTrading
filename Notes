@@ -1,0 +1,23 @@
+Wasn't able to use zipline with anaconda 3.5 
+
+1) So followed the ljw2602 comment from 
+https://github.com/quantopian/zipline/issues/650#issuecomment-167050802
+
+Install Anaconda with Python 3.5
+Since zipline is compatible with Python 3.4, you need to create an environment with Python 3.4
+I named the environment "py34" here
+$conda create -n py34 python=3.4 anaconda
+Install Microsoft Visual C++ 2010 Express
+This is what Python 3.4 is compatible with (http://microsoft-visual-cpp-express.soft32.com/)
+Activate the environment & install zipline
+$activate py34
+$pip install -e C:\GitHub\zipline
+
+To create a new python 3.4 env to install zipline
+
+2) Then reinstalled using conda instead of pip to get the dependencies properly installed.
+
+3) Had some issues, so I reinstalled bottleneck and upgraded numpy.
+
+"from zipline.examples import buyapple"  - is still throwing an error
+https://github.com/quantopian/zipline/issues/1395
